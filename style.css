@@ -123,7 +123,11 @@ label{
 
 .name-container, .email-container, .password-container{
     margin-top: 6vh;
-    margin-bottom: 6vh;
+    margin-bottom: 3vh;
+}
+
+input[type="password"]{
+    margin-bottom: 3vh;
 }
 
 button{
