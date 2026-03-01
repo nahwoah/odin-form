@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+    
+    font-size: 1.1rem;
+    /* max-inline-size: 66ch; */
+    /* line-height: 1.65; */
+  }
+}
+
+body {
+  line-height: 1.5;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  /* height: 100vh; */
+  max-height: 100%;
+}
+
+/* img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+} */
+
+
+input, button, textarea, select, fieldset {
+  font: inherit;
+  font-family: "Roboto", sans-serif;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+  font-family: "Roboto", sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+
+
+
+.container{
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}
+
+/* .image, .main-container{
+    flex: 0 0 50%;
+    
+} */
+
+
+
+img{
+    height: 100vh;
+    display: block;
+    
+}
+
+.main-container{
+    
+    background-color: #f9fafb; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.para p{
+    margin-left: 5vh;
+    max-width: 50%;
+}
+.para{
+    margin-bottom: 3vh;
+}
+
+.form-container{
+    
+    background-color: #ffffff;
+    padding: 5vh;
+    
+    box-shadow: 0 -6px 10px -6px rgba(0,0,0,0.3), 0  6px 10px -6px rgba(0,0,0,0.3);
+    
+}
+
+fieldset{
+    width: 80vh;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input, label{
+    width: 25vh;
+    margin-right: 5vh;
+}
+
+label{
+    font-size: 0.8rem;
+}
+
+.name-container, .email-container, .password-container{
+    margin-top: 6vh;
+    margin-bottom: 6vh;
+}
+
+button{
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-bottom: 1vh;;
+    border-radius: 20px;
+    border: 1;
+}
+
+.signin-para{
+    margin-left: 5vh;;
+}
