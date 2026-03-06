@@ -2,8 +2,9 @@ const form = document.querySelector("form");
 const email = document.getElementById("email");
 const emailError = document.getElementById("email-error");
 const password = document.getElementById("password");
-const passwordError = document.getElementById("password-error")
-const confirmPassword = document.getElementById("confirm-password")
+const passwordError = document.getElementById("password-error");
+const confirmPassword = document.getElementById("confirm-password");
+const confirmPasswordError = document.getElementById("confirm-password-error");
 
 // Regular expression for email validation as per HTML specification
 const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
@@ -21,6 +22,11 @@ const isValidPassword = () => {
   return validity;
 }
 
+const isValidConfirmPassword = () => {
+  const validity = confirmPassword.value.length !== 0 && passwordRegExp.test(confirmPassword.value);
+  return validity;
+}
+
 // Update email input class based on validity
 const setEmailClass = (isValid) => {
   email.className = isValid ? "valid" : "invalid";
@@ -28,6 +34,10 @@ const setEmailClass = (isValid) => {
 
 const setPasswordClass = (isValid) => {
   password.className = isValid ? "valid" : "invalid";
+}
+
+const setConfirmPasswordClass = (isValid) => {
+  confirmPassword.className = isValid ? "valid" : "invalid";
 }
 
 // Update error message and visibility
@@ -51,6 +61,16 @@ const updatePasswordError = (isValid) => {
   }
 }
 
+const updateConfirmPasswordError = (isValid) => {
+  if (isValid) {
+    confirmPasswordError.textContent = "";
+    confirmPasswordError.removeAttribute("class");
+  }else{
+    confirmPasswordError.textContent = "Not a strong password";
+    confirmPasswordError.setAttribute("class", "active");
+  }
+}
+
 // Handle input event to update email validity
 const handleEmailInput = () => {
   const validity = isValidEmail();
@@ -62,6 +82,12 @@ const handlePasswordInput = () => {
   const validity = isValidPassword();
   setPasswordClass(validity);
   updatePasswordError(validity);
+}
+
+const handleConfirmPasswordInput = () => {
+  const validity = isValidConfirmPassword();
+  setConfirmPasswordClass(validity);
+  updateConfirmPasswordError(validity);
 }
 
 // Handle form submission to show error if email is invalid
@@ -86,11 +112,16 @@ const validity = isValidEmail();
 setEmailClass(validity);
 
 const passValidity = isValidPassword();
-setPasswordClass(validity);
+setPasswordClass(passValidity);
+
+const confirmPassValidity = isValidConfirmPassword();
+setConfirmPasswordClass(confirmPassValidity);
+
 // This defines what happens when the user types in the field
 email.addEventListener("input", handleEmailInput);
-
 password.addEventListener("input", handlePasswordInput);
+confirmPassword.addEventListener("input", handleConfirmPasswordInput);
+
 // This defines what happens when the user tries to submit the data
 form.addEventListener("submit", handleSubmit);
 

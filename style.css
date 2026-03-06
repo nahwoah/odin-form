@@ -133,8 +133,9 @@ label{
     margin-bottom: 2.8vh;
 }
 
-#password-error{
+#password-error, #confirm-password-error{
     position: absolute;
+    width: 1vh;
 }
 
 input{
@@ -176,10 +177,11 @@ button{
     margin-left: 5vh;
 }
 
-#email-error, #password-error {
-  width: 100%;
+#email-error, #password-error, #confirm-password-error {
+  /* width: 100%;
+  font-size: 80%; */
   font-size: 80%;
-  color: white;
+  width: 20%;
   color: rgba(255, 0, 0, 0.863);
   border-radius: 0 0 5px 5px;
   box-sizing: border-box;
@@ -281,7 +283,5 @@ a:hover {
         position: absolute;
         bottom: 3px;
         left: 1vw;
-        
     }
-
 }
