@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Sign-Up Form</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" async></script>
 </head>
 <body>
     <div class="container">
-        <img class="image" src="./images/aleksandr-zaitsev-cRS3WCABL18-unsplash.jpg" alt="Nature">
+        <div class="img-container">
+            <img class="image" src="./images/aleksandr-zaitsev-cRS3WCABL18-unsplash.jpg" alt="Nature">
+            <div class="cover"></div>
+            <img class="odin" src="./images/odin-lined.png" alt="odin">
+        </div>
         <div class="main-container">
             <div class="para">
                 <p>
@@ -37,6 +41,7 @@
                             <div>
                                 <p><label for="email">EMAIL</label></p>
                                 <p><input type="email" name="email" id="email"></p>
+                                <span id="email-error" aria-live="polite"></span>
                             </div>
                             <div>
                                 <p><label for="tel">PHONE NUMBER</label></p>
@@ -44,9 +49,10 @@
                             </div>
                         </p>
                         <p class="password-container">
-                            <div>
+                            <div class="pass">
                                 <p><label for="password">PASSWORD</label></p>
                                 <p><input type="password" name="password" id="password"></p>
+                                <span id="password-error" aria-live="polite"></span>
                             </div>
                             <div>
                                 <p><label for="confirm-pass">CONFIRM PASSWORD</label></p>
@@ -57,7 +63,7 @@
                 </fieldset>
             </div>
             <div>
-                <button type="submit">Create Account</button>
+                <button type="submit" form="login-form">Create Account</button>
                 <p class="signin-para">
                     Already have an account? <a href="">Sign in</a>
                 </p>
