@@ -198,9 +198,9 @@ a:hover {
 
 .cover{
     position: absolute;
-    top: 25vh;
+    top: 29vh;
     background: #000000;
-    height: 30vh;
+    height: 22vh;
     width: 30vw;
     opacity: 75%;
 }
@@ -223,6 +223,7 @@ a:hover {
 
 .odin ~ span{
     font-family: roboto, sans-serif;
+    font-size: 0.8rem;
     position: absolute;
     bottom: 3px;
     left: 15vh;
